@@ -12,23 +12,37 @@
     <h2>Welcome to a very simple game of rock paper scissors</h2>
     <h3>Choose your weapon</h3>
 
+    <div id="match-result">
+      <button class="exit-btn">&times;</button>
+      <h2>You <span>result</span>!</h2>
+      <button class="start-btn">PLAY AGAIN</button>
+    </div>
+
     <div class="play-zone">
-      <ul class="user-options">
-      <li>YOUR CHOICE</li>
-      <li>Rock 🪨</li>
-      <li>Paper 📃</li>
-      <li>Scissors ✂️</li>
-      </ul>
-      <div class="user-selection-icon">✊</div>
-      <div class="user-selection-icon">✊</div>
+      <!-- user options -->
+      <div class="user-options">
+        <p class="choice-titles"><mark>YOUR CHOICE</mark></p>
+        <form class="user-options-radio" action="#">
+          <input type="radio" id="rock" name="radio-group" checked>
+          <label for="rock">Rock 🪨</label><br>
+          <input type="radio" id="paper" name="radio-group">
+          <label for="paper">Paper 📃</label><br>
+          <input type="radio" id="scissors" name="radio-group">
+          <label for="scissors">Scissors ✂️</label>
+        </form>
+      </div>
+      <div class="user-selection-icon"><p class="user-fist fist">✊</p></div>
+
+      <!-- cpu options -->
+      <div class="cpu-selection-icon"><p class="cpu-fist fist">✊</p></div>
       <div class="cpu-options">
-        <p>CPU CHOICE</p>
+        <p class="choice-titles"><mark>CPU CHOICE</mark></p>
         <p>Rock 🪨</p>
         <p>Paper 📃</p>
         <p>Scissors ✂️</p>
       </div>
     </div>
-
+    <button class="start-btn">START</button>
   </div>
 </div>
 </body>
