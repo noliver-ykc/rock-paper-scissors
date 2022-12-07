@@ -84,6 +84,11 @@ async function determineWinner(cpuChoice, userChoice) {
 
   // exit results box btn 
   exitBtn.addEventListener("click", () => {
+    user.classList.remove("shake");
+    user.innerText = "✊";
+    cpu.innerText = "✊";
+    cpu.classList.remove("shake");
+    startBtn.disabled = false;
     resultBox.style.display = "none";
   });
 }
