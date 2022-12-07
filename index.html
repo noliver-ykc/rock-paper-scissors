@@ -15,7 +15,7 @@
     <div id="match-result">
       <button class="exit-btn">&times;</button>
       <h2>You <span class="result">result</span>!</h2>
-      <button id="newGame" class="start-btn">PLAY AGAIN</button>
+      <button id="newGame" class="start-btn" onmousedown="party.confetti(this)">PLAY AGAIN</button>
     </div>
 
     <div class="play-zone">
@@ -46,5 +46,6 @@
   </div>
 </div>
 <script src="/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 </body>
 </html>

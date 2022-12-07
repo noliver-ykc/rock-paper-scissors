@@ -41,6 +41,8 @@ newGamebtn.addEventListener("click", () => {
   resultBox.style.display = "none";
 });
 
+
+
 // choose a random weapon for cpu
 function rockPaperScissorsCPU(options) {
   let choice = options[Math.floor(Math.random()*options.length)];
@@ -61,12 +63,13 @@ async function determineWinner(cpuChoice, userChoice) {
     console.log("you lose!"); 
   } else {
     result = "win";
-    console.log("you win!"); 
+    console.log("you win!");
   }
   await delay(2750);
   resultBox.style.display = "block";
   resultDisplay.innerText = result;
 }
+
 
 // needed to delay time of results showing 
 function delay(time) {
