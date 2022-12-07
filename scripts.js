@@ -14,7 +14,7 @@ for (const radioButton of radioButtons) {
 }
 
 
-// game start btn causes btns to shake
+// INITAL game start btn causes btns to shake
 let startBtn = document.querySelector('#gameStart');
 const user = document.querySelector('.user-fist');
 const cpu = document.querySelector('.cpu-fist');
@@ -29,7 +29,7 @@ startBtn.addEventListener("click", () => {
   determineWinner(cpuChoice, userChoice);
 });
 
-// game start btn causes btns to shake
+// play again btn causes btns to shake on next start click
 let newGamebtn = document.querySelector('#newGame');
 newGamebtn.addEventListener("click", () => {
   user.classList.remove("shake");
@@ -37,6 +37,8 @@ newGamebtn.addEventListener("click", () => {
   cpu.innerText = "✊";
   cpu.classList.remove("shake");
   startBtn.disabled = false;
+  let resultBox = document.querySelector('#match-result');
+  resultBox.style.display = "none";
 });
 
 // choose a random weapon for cpu
@@ -45,15 +47,28 @@ function rockPaperScissorsCPU(options) {
   return choice;
 }
 
-// determine winner 
+// determine and display winner 
+async function determineWinner(cpuChoice, userChoice) {
+  let resultDisplay = document.querySelector('.result')
+  let result;
+  let resultBox = document.querySelector('#match-result');
 
-function determineWinner(cpuChoice, userChoice) {
-  if(cpuChoice === userChoice) {
-    console.log("match");
-  } 
-  if(cpuChoice === "🪨" && userChoice === "✂️" || cpuChoice === "✂️" && userChoice === "📃" || cpuChoice === "📃" && userChoice === "🪨"){
+  if(cpuChoice == userChoice) {
+    result = "tied";
+    console.log("you tied!"); 
+  } else if(cpuChoice === "🪨" && userChoice === "✂️" || cpuChoice === "✂️" && userChoice === "📃" || cpuChoice === "📃" && userChoice === "🪨"){
+    result = "lose"
     console.log("you lose!"); 
   } else {
+    result = "win";
     console.log("you win!"); 
   }
+  await delay(2750);
+  resultBox.style.display = "block";
+  resultDisplay.innerText = result;
+}
+
+// needed to delay time of results showing 
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
 }
