@@ -182,4 +182,12 @@
   .exit-btn {
     margin-left: 88% !important;
   }
+
+  #gameStart {
+    margin-top: 5em;
+    position: absolute;
+    z-index: 99;
+    right: 1%;
+    width: 100%;
+  }
 }
