@@ -24,7 +24,9 @@ startBtn.addEventListener("click", () => {
   cpu.classList.add("shake");
   let cpuChoice = rockPaperScissorsCPU(options);
   cpu.innerText = cpuChoice;
+  let userChoice = user.innerText;
   startBtn.disabled = true;
+  determineWinner(cpuChoice, userChoice);
 });
 
 // game start btn causes btns to shake
@@ -41,4 +43,17 @@ newGamebtn.addEventListener("click", () => {
 function rockPaperScissorsCPU(options) {
   let choice = options[Math.floor(Math.random()*options.length)];
   return choice;
+}
+
+// determine winner 
+
+function determineWinner(cpuChoice, userChoice) {
+  if(cpuChoice === userChoice) {
+    console.log("match");
+  } 
+  if(cpuChoice === "🪨" && userChoice === "✂️" || cpuChoice === "✂️" && userChoice === "📃" || cpuChoice === "📃" && userChoice === "🪨"){
+    console.log("you lose!"); 
+  } else {
+    console.log("you win!"); 
+  }
 }
