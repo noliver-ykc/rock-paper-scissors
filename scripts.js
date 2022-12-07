@@ -54,6 +54,7 @@ async function determineWinner(cpuChoice, userChoice) {
   let resultDisplay = document.querySelector('.result')
   let result;
   let resultBox = document.querySelector('#match-result');
+  let exitBtn = document.querySelector('.exit-btn');
 
   if(cpuChoice == userChoice) {
     result = "tied";
@@ -68,6 +69,11 @@ async function determineWinner(cpuChoice, userChoice) {
   await delay(2750);
   resultBox.style.display = "block";
   resultDisplay.innerText = result;
+
+  // exit results box btn 
+  exitBtn.addEventListener("click", () => {
+    resultBox.style.display = "none";
+  });
 }
 
 
@@ -75,3 +81,5 @@ async function determineWinner(cpuChoice, userChoice) {
 function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
+
+
