@@ -160,3 +160,23 @@
 
 
 /* mobile sizes */
+/* iphone6 to 13 pro max */
+@media only screen and (min-width: 375px) and (max-width: 430px){
+  .container {
+    margin: 1em;
+  }
+  .play-zone {
+    display: block;
+  }
+  .fist {
+    font-size: 5em;
+    margin: 0;
+  }
+  .user-options-radio {
+    display: flex;
+  }
+
+  #match-result {
+    width: 19em;
+  }
+}
