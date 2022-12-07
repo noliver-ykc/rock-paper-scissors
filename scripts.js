@@ -25,7 +25,17 @@ startBtn.addEventListener("click", () => {
   cpu.classList.add("shake");
   let cpuChoice = rockPaperScissorsCPU(options);
   cpu.innerText = cpuChoice;
-  cpuDisplay.innerText = cpuChoice;
+  let cpuText ="bob";
+  if(cpuChoice == "🪨") {
+    cpuText = "rock";
+  } else if (cpuChoice == "📃") {
+    cpuText = "paper";
+  } else {
+    cpuText = "scissors"
+  }
+  cpuDisplay.innerText = `CPU chose ${cpuText} ${cpuChoice}`;
+
+
   let userChoice = user.innerText;
   startBtn.disabled = true;
   determineWinner(cpuChoice, userChoice);
