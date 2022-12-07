@@ -15,15 +15,17 @@ for (const radioButton of radioButtons) {
 
 
 // INITAL game start btn causes btns to shake
-let startBtn = document.querySelector('#gameStart');
+const startBtn = document.querySelector('#gameStart');
 const user = document.querySelector('.user-fist');
 const cpu = document.querySelector('.cpu-fist');
+let cpuDisplay = document.querySelector('.cpu-choice-display');
 const options = ["🪨","📃","✂️"];
 startBtn.addEventListener("click", () => {
   user.classList.add("shake");
   cpu.classList.add("shake");
   let cpuChoice = rockPaperScissorsCPU(options);
   cpu.innerText = cpuChoice;
+  cpuDisplay.innerText = cpuChoice;
   let userChoice = user.innerText;
   startBtn.disabled = true;
   determineWinner(cpuChoice, userChoice);
