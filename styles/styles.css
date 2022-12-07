@@ -179,4 +179,7 @@
   #match-result {
     width: 19em;
   }
+  .exit-btn {
+    margin-left: 88% !important;
+  }
 }
