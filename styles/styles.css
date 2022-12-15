@@ -33,6 +33,7 @@
   font-size: 10em;
   cursor: pointer;
   margin-bottom: 0;
+  padding: .2em;
 }
 
 .cpu-fist {
@@ -72,7 +73,7 @@
 [type="radio"]:not(:checked) {
   position: absolute;
   left: -9999px;
-  
+
 }
 [type="radio"]:checked + label,
 [type="radio"]:not(:checked) + label
